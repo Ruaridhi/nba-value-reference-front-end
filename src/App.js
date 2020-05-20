@@ -3,7 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+fetch('https://localhost:44371/api/player/CE72658B')
+.then((response) => {
+console.log(response.body)});
+
   return (
+
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
