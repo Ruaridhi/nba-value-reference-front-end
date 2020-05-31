@@ -1,29 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-
-fetch('https://localhost:44371/api/player/CE72658B')
+  const [data, setData] = useState([]);
+fetch('https://localhost:5001/api/player/CE72658B')
 .then((response) => {
-console.log(response.body)});
+  console.log("****" + response.body)
+  setData(response.body)
+})
+.catch(err => console.error("The call to /api/player has failed:" + err));
 
+//const response = useState(this.state);
   return (
 
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {data}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );

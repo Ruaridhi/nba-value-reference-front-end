@@ -5,10 +5,6 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 
-
-var baseUrl = 'https://localhost:44371/api/';
-
-
 ReactDOM.render(
   <React.StrictMode>
     <App />
