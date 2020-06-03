@@ -5,7 +5,7 @@ function App() {
   const [data, setData] = useState([]);
 fetch('https://localhost:5001/api/player/CE72658B')
 .then(response => response.json())
-.then(json => console.log(json))
+.then(json => setData(json))
 .catch(err => console.error("The call to /api/player has failed:" + err));
 
 //const response = useState(this.state);
