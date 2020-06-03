@@ -4,10 +4,8 @@ import './App.css';
 function App() {
   const [data, setData] = useState([]);
 fetch('https://localhost:5001/api/player/CE72658B')
-.then((response) => {
-  console.log("****" + response.body)
-  setData(response.body)
-})
+.then(response => response.json())
+.then(json => console.log(json))
 .catch(err => console.error("The call to /api/player has failed:" + err));
 
 //const response = useState(this.state);
